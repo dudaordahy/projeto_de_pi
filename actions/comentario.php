@@ -4,7 +4,7 @@ include "../includes/logado.php"; // Garante que a sessão está iniciada
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Pegando o ID do usuário logado na sessão (ajuste o nome da chave se necessário)
-    $id_usuario = $_SESSION['Usuario']; 
+    $id_usuario = $_SESSION['id_user']; 
     $texto = $_POST['texto'];
     $comentario_pai = !empty($_POST['comentario_pai']) ? $_POST['comentario_pai'] : null;
 

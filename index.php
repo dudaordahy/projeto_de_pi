@@ -46,7 +46,7 @@
                     // Botão/Formulário para responder a ESTE comentário específico
                     ?>
                     <form action="./actions/comentario.php" method="POST">
-                        <input type="hidden" name="comentario_pai" value="<?php echo $comentario['id']; ?>">
+                        <input type="hidden" name="pergunta_pai" value="">
                         <input type="text" name="texto" placeholder="Responder a este comentário..." required>
                         <button type="submit">Responder</button>
                     </form>
@@ -76,7 +76,7 @@
             ?>
             <hr>
             <form action="./actions/comentario_pergunta.php" method="POST">
-                <input type="hidden" name="pergunta_pai" value="<?php echo $pergunta['id_pergunta']; ?>">
+                <input type="hidden" name="pergunta_pai" value="">
                 <textarea name="texto" placeholder="Responda a essa pergunta base..." required></textarea>
                 <br>
                 <button type="submit">Enviar Resposta Base</button>
