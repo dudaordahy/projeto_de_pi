@@ -1,13 +1,11 @@
 <?php
+session_start();
 
-$host = "localhost";
-$banco = "projeto_PI";
-$usuario = "root";
-$senha = "";
+// configuracoes de acesso
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "projeto_pi";
 
-try {
-    $pdo = new PDO("mysql:host=$host;dbname=$banco;charset=utf8", $usuario, $senha);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e){
-    die("Erro: " . $e->getMessage());
-}
+$conexao = mysqli_connect($servername, $username, $password, $dbname);
+?>
