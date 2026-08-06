@@ -7,7 +7,6 @@ include "../includes/conexao.php";
 $user = $_POST['user'];
 $senha = $_POST['senha'];
 
-$sql = "SELECT * FROM usuarios WHERE nome_user = '{$user}' AND Senha = '{$senha}'";
 $sql = "SELECT * FROM usuarios WHERE nome_user = '{$user}' AND senha = '{$senha}'";
 $resultado = mysqli_query($conexao, $sql);
 
