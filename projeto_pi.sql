@@ -3,10 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17/07/2026 às 17:08
 -- Tempo de geração: 18-Jul-2026 às 04:23
 -- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.2.12
 -- versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -26,7 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `comentarios_perguntas`
 -- Estrutura da tabela `comentarios_perguntas`
 --
 
@@ -64,7 +61,6 @@ CREATE TABLE `comentarios_usuarios` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `perguntas`
 -- Estrutura da tabela `perguntas`
 --
 
@@ -94,7 +90,6 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `usuarios`
 -- Extraindo dados da tabela `usuarios`
 --
 
