@@ -3,16 +3,12 @@ include "../includes/conexao.php";
 include "../includes/logado.php";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    
-    // Verifica se a sessão realmente existe antes de prosseguir
-    if (!isset($_SESSION['id_user'])) {
-        die("Erro: Você precisa estar logado para comentar.");
-    }
-
-    $id_usuario = $_SESSION['id_user']; 
+    // trata os dados do usuario logado
+    $usuario = $_SESSION['Usuario']; 
+    // pega o id do usuario que esta na sessao
+    $id_usuario = $usuario['id_user'];
     $texto = $_POST['texto'];
     $pergunta_pai = $_POST['pergunta_pai'];
-
     // ... restante do código original
 
     if (!empty($texto) && !empty($pergunta_pai)) {

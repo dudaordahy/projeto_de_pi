@@ -9,6 +9,7 @@ $resultado = mysqli_query($conexao, $sql);
 
 // validacao do acesso
 if($resultado->num_rows > 0){
+
     // validacao do usuario - cria a sessao
     $_SESSION['Usuario'] =  mysqli_fetch_assoc($resultado);
     header('Location: ../index.php');
