@@ -11,12 +11,6 @@ $sql = "SELECT * FROM usuarios WHERE nome_user = '{$user}' AND senha = '{$senha}
 $resultado = mysqli_query($conexao, $sql);
 
 // validacao do acesso
-<<<<<<< HEAD
-if($resultado->num_rows > 0){
-
-    // validacao do usuario - cria a sessao
-    $_SESSION['Usuario'] =  mysqli_fetch_assoc($resultado);
-=======
 if($resultado && $resultado->num_rows > 0){
     // Busca a linha do usuário como array
     $dados_usuario = mysqli_fetch_assoc($resultado);
@@ -27,7 +21,6 @@ if($resultado && $resultado->num_rows > 0){
     // Se quiser guardar o nome também para exibir na tela depois, use outra chave:
     $_SESSION['nome_user'] = $dados_usuario['nome_user'];
     
->>>>>>> 7e2037da8c7d12d6e6de5702a8b3eead317c7983
     header('Location: ../index.php');
     exit();
 } else {

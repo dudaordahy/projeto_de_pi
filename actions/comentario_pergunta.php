@@ -8,17 +8,6 @@ include "../includes/logado.php";
 header('Content-Type: application/json');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-<<<<<<< HEAD
-    // trata os dados do usuario logado
-    $usuario = $_SESSION['Usuario']; 
-    // pega o id do usuario que esta na sessao
-    $id_usuario = $usuario['id_user'];
-    $texto = $_POST['texto'];
-    $pergunta_pai = $_POST['pergunta_pai'];
-    // ... restante do código original
-
-    if (!empty($texto) && !empty($pergunta_pai)) {
-=======
     
     $id_usuario = isset($_SESSION['id_user']) ? intval($_SESSION['id_user']) : 0; 
     $texto = isset($_POST['texto']) ? trim($_POST['texto']) : '';
@@ -38,7 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     try {
->>>>>>> 7e2037da8c7d12d6e6de5702a8b3eead317c7983
         $sql = "INSERT INTO comentarios_perguntas (usuario, texto, pergunta_pai) VALUES (?, ?, ?)";
         $stmt = $conexao->prepare($sql);
         
