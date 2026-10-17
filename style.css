@@ -1,0 +1,262 @@
+:root {
+  --vermelho: #8f1717;
+  --vermelho-escuro: #5d0d0d;
+  --marrom: #351b16;
+  --marrom-claro: #6b4032;
+  --creme: #f7f1e8;
+  --branco: #ffffff;
+  --cinza: #666;
+  --preto: #191919;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Work Sans", Arial, sans-serif;
+  line-height: 1.55;
+  background-color: var(--creme);
+  color: var(--preto);
+}
+
+h1,
+h2 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+:focus-visible {
+  outline: 3px solid var(--vermelho);
+  outline-offset: 2px;
+}
+
+/* ---------- Botões ---------- */
+.btn {
+  background: var(--vermelho);
+  color: var(--branco);
+  border: none;
+  padding: 11px 20px;
+  border-radius: 6px;
+  font: 600 0.95rem "Work Sans", Arial, sans-serif;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: var(--vermelho-escuro);
+}
+
+/* ---------- Página de cadastro / login ---------- */
+body.pagina-auth {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  background: var(--creme);
+}
+
+.auth-card {
+  position: relative;
+  width: min(920px, 100%);
+  height: 600px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--branco);
+  box-shadow: 0 10px 40px rgba(53, 27, 22, 0.22);
+}
+
+/* painel vermelho que desliza de um lado para o outro */
+.auth-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  text-align: center;
+  color: var(--creme);
+  background: linear-gradient(160deg, var(--vermelho) 0%, var(--vermelho-escuro) 100%);
+  transition: transform 0.6s ease;
+}
+
+.auth-panel .msg {
+  display: none;
+}
+
+.auth-panel h2 {
+  margin: 0 0 12px;
+  font-size: 2rem;
+  color: var(--creme);
+}
+
+.auth-panel p {
+  margin: 0 0 26px;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.btn-contorno {
+  background: transparent;
+  color: var(--creme);
+  border: 2px solid var(--creme);
+  padding: 11px 34px;
+  border-radius: 999px;
+  font: 600 0.95rem "Work Sans", Arial, sans-serif;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-contorno:hover {
+  background: var(--creme);
+  color: var(--vermelho-escuro);
+}
+
+/* formulários */
+.auth-form {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 48px;
+  background: var(--branco);
+  transition: opacity 0.4s ease, visibility 0.4s;
+}
+
+.auth-form h1 {
+  margin: 0 0 24px;
+  font-size: 2.1rem;
+  color: var(--vermelho);
+  text-align: center;
+}
+
+.input-box {
+  position: relative;
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.input-box svg {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  width: 20px;
+  height: 20px;
+  transform: translateY(-50%);
+  fill: none;
+  stroke: var(--marrom-claro);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 14px 14px 14px 46px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  background: var(--creme);
+  color: var(--preto);
+  font: 1rem "Work Sans", Arial, sans-serif;
+}
+
+.input-box input::placeholder {
+  color: var(--cinza);
+}
+
+.input-box input:focus {
+  outline: none;
+  border-color: var(--vermelho);
+  background: var(--branco);
+}
+
+.auth-form .btn {
+  margin-top: 10px;
+  padding: 12px 44px;
+  border-radius: 999px;
+}
+
+.auth-erro {
+  width: 100%;
+  margin: 0 0 14px;
+  padding: 10px 14px;
+  border-left: 4px solid var(--vermelho);
+  background: var(--creme);
+  color: var(--vermelho-escuro);
+  font-size: 0.9rem;
+}
+
+/* modo cadastro (padrão): painel à esquerda, cadastro à direita */
+.form-cadastro {
+  left: 50%;
+}
+
+.form-login {
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.auth-card .msg-cadastro {
+  display: block;
+}
+
+/* modo login: painel vai para a direita, login à esquerda */
+.auth-card.modo-login .auth-panel {
+  transform: translateX(100%);
+}
+
+.auth-card.modo-login .form-cadastro {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.auth-card.modo-login .form-login {
+  opacity: 1;
+  visibility: visible;
+}
+
+.auth-card.modo-login .msg-cadastro {
+  display: none;
+}
+
+.auth-card.modo-login .msg-login {
+  display: block;
+}
+
+@media (max-width: 760px) {
+  .auth-card {
+    height: auto;
+  }
+  .auth-panel,
+  .auth-form {
+    position: static;
+    width: 100%;
+    transform: none !important;
+    padding: 28px 24px;
+  }
+  .auth-panel p {
+    margin-bottom: 18px;
+  }
+  .form-cadastro,
+  .form-login {
+    display: none;
+    opacity: 1;
+    visibility: visible;
+  }
+  .auth-card:not(.modo-login) .form-cadastro,
+  .auth-card.modo-login .form-login {
+    display: flex;
+  }
+}

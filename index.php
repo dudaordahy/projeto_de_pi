@@ -9,74 +9,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fórum - Perguntas e Respostas</title>
-    <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 20px; 
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        h1 {
-            color: #222;
-        }
-        .pergunta-box { 
-            background: #ffffff; 
-            padding: 20px; 
-            margin-bottom: 25px; 
-            border-radius: 8px; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .pergunta-box h2 {
-            margin-top: 0;
-            color: #007BFF;
-        }
-        .lista-comentarios {
-            margin-top: 15px;
-        }
-        .comentario { 
-            margin-left: 10px; 
-            margin-top: 10px;
-            padding: 12px; 
-            border-left: 3px solid #ccc; 
-            background: #fdfdfd; 
-            border-radius: 0 4px 4px 0;
-        }
-        .form-comentario-ajax { 
-            margin-top: 15px; 
-        }
-        .form-comentario-ajax textarea {
-            width: 100%;
-            height: 70px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            resize: vertical;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-        .form-comentario-ajax button {
-            margin-top: 8px;
-            background: #007BFF;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        .form-comentario-ajax button:hover {
-            background: #0056b3;
-        }
-        hr {
-            border: 0;
-            border-top: 1px solid #eee;
-            margin: 20px 0 10px 0;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="forum.css">
 </head>
 <body>
 
-    <h1>Fórum de Discussão</h1>
+    <header class="topo">
+        <h1>Fórum de Discussão</h1>
+        <div class="usuario">
+            <span>@<?php echo htmlspecialchars($_SESSION['nome_user'] ?? ''); ?></span>
+            <a class="sair" href="./actions/logoff.php">Sair</a>
+        </div>
+    </header>
+
+    <main>
 
     <?php
     // 1. Buscar todas as perguntas base cadastradas na tabela 'perguntas'
@@ -94,13 +42,17 @@
                 <div id="comentarios-da-pergunta-<?php echo $id_p; ?>" class="lista-comentarios">
                     <?php
                     // 2. Buscar comentários principais desta pergunta (na tabela comentarios_perguntas)
-                    $sql_comentarios = "SELECT cp.*, u.nome_user FROM comentarios_perguntas cp 
-                    JOIN usuarios u ON cp.usuario = u.id_user 
-                    WHERE cp.pergunta_pai IS NULL ORDER BY cp.data_criacao ASC"; 
-                    // Nota: Como 'pergunta_pai' na sua modelagem aceita NULL para os primeiros comentários, 
-                    // filtramos por IS NULL ou associamos diretamente conforme sua regra de negócios.
                     
-                    $res_comentarios = $conexao->query($sql_comentarios);
+                    $sql_comentarios = "SELECT cp.*, u.nome_user
+                    FROM comentarios_perguntas cp
+                    JOIN usuarios u ON cp.usuario = u.id_user
+                    WHERE cp.pergunta_pai = ?
+                    ORDER BY cp.data_criacao ASC";
+
+                    $stmt_comentarios = $conexao->prepare($sql_comentarios);
+                    $stmt_comentarios->bind_param("i", $id_p);
+                    $stmt_comentarios->execute();
+                    $res_comentarios = $stmt_comentarios->get_result();
 
                     if ($res_comentarios && $res_comentarios->num_rows > 0) {
                         while ($comentario = $res_comentarios->fetch_assoc()) {
@@ -125,9 +77,10 @@
             <?php
         }
     } else {
-        echo "<p>Nenhuma pergunta cadastrada no fórum ainda.</p>";
+        echo "<p class='vazio'>Nenhuma pergunta cadastrada no fórum ainda.</p>";
     }
     ?>
+    </main>
 
     <script>
     document.querySelectorAll('.form-comentario-ajax').forEach(form => {
