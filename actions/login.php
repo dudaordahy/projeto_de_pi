@@ -21,7 +21,7 @@ if($resultado && $resultado->num_rows > 0){
     // Se quiser guardar o nome também para exibir na tela depois, use outra chave:
     $_SESSION['nome_user'] = $dados_usuario['nome_user'];
     
-    header('Location: ../index.php');
+    header('Location: ../pagina_inicial.php');
     exit();
 } else {
     header('Location: ../cadastro.php?msg=semusuario');
