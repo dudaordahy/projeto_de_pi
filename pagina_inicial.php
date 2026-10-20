@@ -45,7 +45,7 @@
             </li>
 
             <li>
-                <a href="../projeto_de_pi/index.php">FÓRUM</a>
+                <a href="#forum">FÓRUM</a>
             </li>
 
             <li>
@@ -94,28 +94,30 @@
 
             <div class="slides">
 
-                <div class="slide">
+                <div class="slide" id="brasil">
+                    <a  class="site" href="https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/44541-pais-tinha-1-650-milhao-de-criancas-e-adolescentes-em-situacao-de-trabalho-infantil-em-2024" target="_blank" class="slide-link">
+    <div class="slide-content"> 
+        <span class="tag"> 
+            Brasil 
+        </span> 
+ 
+        <h2> 
+            1,65 milhão de crianças e adolescentes estavam em situação de trabalho infantil em 2024 
+        </h2> 
+ 
+        <p> 
+            O número representa 4,3% da população brasileira de 5 a 17 anos. 
+        </p> 
+ 
+    </div>
 
-                    <div class="slide-content">
-
-                        <span class="tag">
-                            Brasil
-                        </span>
-
-                        <h2>
-                            1,65 milhão de crianças e adolescentes estavam em situação de trabalho infantil em 2024
-                        </h2>
-
-                        <p>
-                            O número representa 4,3% da população brasileira de 5 a 17 anos.
-                        </p>
-
-                    </div>
+</a>
 
                 </div>
 
 
-                <div class="slide">
+                <div class="slide" id="direitos">
+                    <a  class="site" href="https://www.planalto.gov.br/ccivil_03/leis/l10097.htm" target="_blank" class="slide-link">
 
                     <div class="slide-content">
 
@@ -136,8 +138,10 @@
 
                 </div>
 
+                 </a>
 
-                <div class="slide">
+                <div class="slide" id="educacao">
+                    <a  class="site" href="https://g1.globo.com/jornal-nacional/noticia/2025/09/19/trabalho-infantil-16-milhao-de-criancas-e-adolescentes-estavam-nessa-situacao-em-2024.ghtml" target="_blank" class="slide-link">
 
                     <div class="slide-content">
 
@@ -157,9 +161,10 @@
                     </div>
 
                 </div>
+ </a>
 
-
-                <div class="slide">
+                <div class="slide" id="sociedade">
+                    <a  class="site" href="https://www.tst.jus.br/web/combatetrabalhoinfantil" target="_blank" class="slide-link">
 
                     <div class="slide-content">
 
@@ -181,7 +186,7 @@
                 </div>
 
             </div>
-
+     </a>
 
             <button class="arrow prev" onclick="mudarSlide(-1)">
                 ‹
@@ -513,9 +518,10 @@
                     </p>
 
                 </div>
-
             </div>
-
+<a href="https://senacrsedu-my.sharepoint.com/:w:/g/personal/87175002068_senacrs_edu_br/IQDnt_zcoG18TZQKCQ4XrjLEAWOJqWB2l3IHwQzUtxdRaTY?e=QNM4xD" class="btn-saiba">
+                    LEIA MAIS
+                </a>
 
             <h2>
                 Como combater?
@@ -539,7 +545,7 @@
             <section class="forum" id="forum">
 
                 <span class="categoria">
-                    Fórum • Voz da Infância
+                    Relatos • Voz da Infância
                 </span>
 
                 <h2>
@@ -643,29 +649,39 @@
                 <ul>
 
                     <li>
+                        <a  class="site" href="https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho/areas-de-atuacao/erradicacao-do-trabalho-infantil" target="_blank" class="slide-link">
                         <span class="numero">01</span>
                         O que caracteriza o trabalho infantil?
                     </li>
+                    </a>
 
                     <li>
+                        <a  class="site" href="https://www.planalto.gov.br/ccivil_03/leis/l10097.htm" target="_blank" class="slide-link">
                         <span class="numero">02</span>
                         Entenda a idade mínima para trabalhar
                     </li>
+                    </a>
 
                     <li>
+                        <a  class="site" href="https://www.planalto.gov.br/ccivil_03/leis/l8069.htm" target="_blank" class="slide-link">
                         <span class="numero">03</span>
                         Trabalho infantil e desigualdade social
                     </li>
+                    </a>
 
                     <li>
+                              <a  class="site" href="https://educa.ibge.gov.br/jovens/materias-especiais/23079-em-2024-1-milhao-e-650-mil-criancas-e-adolescentes-de-5-a-17-anos-estavam-em-situacao-de-trabalho-infantil.html" target="_blank" class="slide-link">
                         <span class="numero">04</span>
                         Os números do IBGE
                     </li>
+                    </a>
 
                     <li>
+                              <a  class="site" href="https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/conaeti" target="_blank" class="slide-link">
                         <span class="numero">05</span>
                         Como combater o trabalho infantil?
                     </li>
+                    </a>
 
                 </ul>
 
@@ -737,7 +753,7 @@
                 </p>
 
                 <a href="#forum" class="btn-forum">
-                    DEIXAR UM RELATO
+                    ACESSE AQUI
                 </a>
 
             </div>

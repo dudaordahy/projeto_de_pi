@@ -27,6 +27,10 @@ body {
 }
 
 
+/* =========================
+ CABEÇALHO
+========================= */
+
 header {
   background: linear-gradient(
       135deg,
@@ -221,6 +225,38 @@ nav a:hover {
           #4b2921
       );
 }
+#brasil{
+ background-image: url('dsc09321_1.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#educacao{
+ background-image: url('WhatsApp\ Image\ 2019-06-10\ at\ 13.30.21\ _2_.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#sociedade{
+ background-image: url('DB2021DFC11B03358E6A85E41BC69BD664CA_menino.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#direitos{
+ background-image: url('image1024x768.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 
 .slide:nth-child(2) {
   background:
@@ -302,6 +338,13 @@ nav a:hover {
   font-size: 16px;
 
   opacity: .9;
+}
+
+.site {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer;
 }
 
 
@@ -622,6 +665,8 @@ aside {
 }
 
 
+
+
 /* =========================
  LINHA DO TEMPO
 ========================= */
@@ -664,6 +709,25 @@ aside {
   color: var(--vermelho);
 
   font-size: 18px;
+}
+
+.btn-saiba {
+  display: block;
+  margin-top: 15px;
+  padding: 10px;
+  width:300px ;
+  background: var(--vermelho);
+  color: white;
+  text-align: center;
+  align-items: center;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: .2s;
+}
+
+.btn-saiba:hover {
+  background: var(--vermelho-escuro);
 }
 
 
