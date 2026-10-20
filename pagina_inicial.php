@@ -45,7 +45,7 @@
             </li>
 
             <li>
-                <a href="#forum">FÓRUM</a>
+                <a href="index.php">FÓRUM</a>
             </li>
 
             <li>
